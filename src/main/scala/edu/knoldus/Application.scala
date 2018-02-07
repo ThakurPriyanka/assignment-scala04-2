@@ -24,12 +24,13 @@ object Application {
       conf.getString("twitter.access.api.token"),
       conf.getString("twitter.access.api.secret")))
 
-    val hashTag = "modi"
+    val hashTag = "#annual"
     val tweetObject = new FutureClass
-
-    tweetObject.getTweet(hashTag, twitters)
-    tweetObject.getCount(hashTag, twitters)
-
+    val since = "2017-12-01"
+//    tweetObject.getTweet(hashTag, twitters)
+//    tweetObject.getCount(hashTag, twitters)
+    tweetObject.getTweetByTime(hashTag,since,twitters)
+//    tweetObject.getFavoriteTweet(twitters)
     Thread.sleep(timeToSleep)
     log.info("end")
   }
